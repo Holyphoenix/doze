@@ -1,0 +1,14 @@
+# Doze Project Package Manifest (.doze/doze.toml)
+# Safe to commit to source control. Secrets are NEVER stored here.
+
+project_id = "demo-service-0001"
+name = "Demo Service"
+description = "Sample project-level .doze package demonstrating REST, WebSocket, JSON-RPC, and gRPC requests"
+schema_version = 1
+default_environment = "dev"
+proto_include_dirs = [".doze/proto"]
+
+[[default_headers]]
+enabled = true
+key = "X-Client"
+value = "Doze-Demo"

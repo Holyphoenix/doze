@@ -1,0 +1,5 @@
+# Doze safety guard — secrets and local overrides must NEVER be committed.
+*.secrets.toml
+secrets/
+local/
+.history/

@@ -1,0 +1,16 @@
+# Doze Project Environment: dev
+# Safe to commit to source control.
+# Secret keys listed under [[secret_keys]] have their values stored ONLY in each user's local directory.
+
+name = "dev"
+description = "Development endpoints"
+
+[variables]
+base_url = "https://httpbin.org"
+ws_url = "wss://echo.websocket.events"
+rpc_url = "https://cloudflare-eth.com"
+grpc_url = "http://127.0.0.1:50051"
+
+[[secret_keys]]
+key = "api_token"
+description = "Personal bearer token — set locally in Doze (never committed)"

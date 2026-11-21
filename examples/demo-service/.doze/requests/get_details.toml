@@ -1,0 +1,27 @@
+id = "demo-rest-get-01"
+name = "Get Request Details"
+description = "Demonstrates query params, dynamic built-in variables, and environment URLs"
+protocol = "rest"
+method = "GET"
+url = "{{base_url}}/get"
+
+[[query_params]]
+enabled = true
+key = "source"
+value = "doze"
+
+[[query_params]]
+enabled = true
+key = "request_id"
+value = "{{$uuid}}"
+
+[[headers]]
+enabled = true
+key = "Accept"
+value = "application/json"
+
+[auth]
+type = "none"
+
+[body]
+type = "none"

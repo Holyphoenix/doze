@@ -1,0 +1,40 @@
+[package]
+name = "doze"
+version = "0.1.0"
+edition = "2024"
+description = "Doze — A REST, WebSocket, and RPC (JSON-RPC / gRPC) client built with Dioxus in Rust"
+authors = ["Doze Contributors"]
+
+[dependencies]
+dioxus = { version = "0.7", features = ["desktop"] }
+tokio = { version = "1", features = ["full"] }
+futures-util = "0.3"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+reqwest = { version = "0.12", features = ["json", "multipart", "cookies", "gzip", "brotli", "deflate"] }
+tokio-tungstenite = { version = "0.26", features = ["native-tls"] }
+tonic = { version = "0.14", default-features = false, features = ["channel", "tls-ring", "tls-webpki-roots", "tls-native-roots", "gzip"] }
+protox = "0.10"
+prost-reflect = { version = "0.16", features = ["serde"] }
+prost = "0.14"
+bytes = "1"
+http = "1"
+directories = "6"
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+url = "2"
+base64 = "0.22"
+rfd = "0.15"
+thiserror = "2"
+arboard = "3"
+rand = "0.9"
+hex = "0.4"
+image = { version = "0.25", default-features = false, features = ["png"] }
+rhai = { version = "1.27", features = ["serde"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[target.'cfg(windows)'.build-dependencies]
+winresource = "0.1"

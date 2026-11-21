@@ -1,0 +1,21 @@
+id = "demo-ws-echo-01"
+name = "WebSocket Echo"
+description = "Interactive WebSocket connection sample"
+protocol = "web_socket"
+method = "GET"
+url = "{{ws_url}}"
+
+[auth]
+type = "none"
+
+[body]
+type = "none"
+
+[ws]
+subprotocols = []
+default_message = "{\n  \"event\": \"ping\",\n  \"ts\": \"{{$isoTimestamp}}\"\n}"
+
+[[ws.presets]]
+name = "Ping JSON"
+payload = "{\"event\":\"ping\"}"
+is_binary = false

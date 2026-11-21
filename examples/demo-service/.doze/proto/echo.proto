@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package echo;
+
+service EchoService {
+  rpc SayHello (EchoRequest) returns (EchoResponse);
+  rpc GetStatus (StatusRequest) returns (StatusResponse);
+}
+
+message EchoRequest {
+  string message = 1;
+  int32 repeat_count = 2;
+  repeated string tags = 3;
+}
+
+message EchoResponse {
+  string reply = 1;
+  int64 timestamp_unix = 2;
+}
+
+message StatusRequest {
+  bool include_metrics = 1;
+}
+
+message StatusResponse {
+  string status = 1;
+  string version = 2;
+}

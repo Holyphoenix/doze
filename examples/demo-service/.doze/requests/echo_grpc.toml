@@ -1,0 +1,20 @@
+id = "demo-grpc-echo-01"
+name = "Echo gRPC SayHello"
+description = "Dynamic gRPC call compiled in pure Rust from .doze/proto/echo.proto"
+protocol = "grpc"
+method = "POST"
+url = "{{grpc_url}}"
+
+[auth]
+type = "bearer"
+token = "{{api_token}}"
+
+[body]
+type = "none"
+
+[grpc]
+proto_file = ".doze/proto/echo.proto"
+include_dirs = []
+service = "echo.EchoService"
+method = "SayHello"
+payload_json = "{\n  \"message\": \"Hello from Doze\",\n  \"repeatCount\": 1,\n  \"tags\": [\"demo\"]\n}"
